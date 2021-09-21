@@ -1,8 +1,10 @@
-package com.example.whatsapp;
+package com.example.whatsapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.whatsapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
