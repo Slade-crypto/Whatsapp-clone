@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -93,6 +94,15 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Preencha a senha", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser usuarioAtual = autenticacao.getCurrentUser();
+        if (usuarioAtual != null){
+            abrirTelaPrincipal();
+        }
     }
 
     public void abrirTelaCadastro(View view){
