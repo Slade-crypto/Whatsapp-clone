@@ -78,4 +78,19 @@ public class UsuarioFirebase {
 
      }
 
+     public static Usuario getDadosUsuarioLogado(){
+
+         FirebaseUser firebaseUser = getUsuarioAtual();
+
+         Usuario usuario = new Usuario();
+         usuario.setEmail(firebaseUser.getEmail());
+         usuario.setNome(firebaseUser.getDisplayName());
+
+         if(firebaseUser.getPhotoUrl() == null){
+            usuario.setFoto(firebaseUser.getPhotoUrl().toString());
+         }
+
+         return usuario;
+     }
+
 }
